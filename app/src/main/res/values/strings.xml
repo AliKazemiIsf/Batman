@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Batman</string>
+    <string name="no_data">No data available</string>
+    <string name="all_movies_rank">All Movies Rank</string>
+    <string name="batman">Batman</string>
+    <string name="director">Director:</string>
+    <string name="writer">Writer:</string>
+    <string name="actor">Actor:</string>
+    <string name="plot">Plot:</string>
+    <string name="language">Language:</string>
+    <string name="country">Country:</string>
+    <string name="awards">Awards:</string>
+    <string name="box_office">Box Office:</string>
+    <string name="production">Production:</string>
+    <string name="retry">Try Again</string>
+    <string name="no_internet">No Connection Available</string>
+    <string name="choose_film">Choose Film</string>
+    <string name="press_again_to_exit">Press again to exit</string>
+
+</resources>

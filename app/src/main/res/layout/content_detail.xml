@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/guid_line" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guid_line" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/thumbnail"
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/thumbnail"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingExtra="8dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_color_secondary"
+                    android:textSize="@dimen/textAppearanceHeadline5"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutVote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="@id/txtTitle"
+                    app:layout_constraintStart_toStartOf="@id/txtTitle"
+                    app:layout_constraintTop_toBottomOf="@id/txtTitle">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/star"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_star" />
+
+                    <TextView
+                        android:id="@+id/txtImdbRating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:textColor="@color/text_color_reverse"
+                        android:textSize="@dimen/textAppearanceHeadline6"
+                        app:layout_constraintStart_toEndOf="@id/star"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txtImdbVotes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/text_color_reverse"
+                        android:textSize="@dimen/textAppearanceCaption"
+                        app:layout_constraintStart_toStartOf="@id/txtImdbRating"
+                        app:layout_constraintTop_toBottomOf="@+id/txtImdbRating" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/detail1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtTitle"
+                    app:layout_constraintTop_toBottomOf="@id/layoutVote">
+
+                    <TextView
+                        android:id="@+id/txtRated"
+                        style="@style/TextReverseTheme"
+                        app:layout_constraintStart_toStartOf="@id/txtTitle"
+                        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+                    <View style="@style/Divider" />
+
+                    <TextView
+                        android:id="@+id/txtReleased"
+                        style="@style/TextReverseTheme"
+                        app:layout_constraintStart_toStartOf="@id/txtTitle"
+                        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+                    <View style="@style/Divider" />
+
+                    <TextView
+                        android:id="@+id/txtRuntime"
+                        style="@style/TextReverseTheme"
+                        app:layout_constraintStart_toStartOf="@id/txtTitle"
+                        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtTitle"
+                    app:layout_constraintTop_toBottomOf="@id/detail1">
+
+                    <TextView
+                        android:id="@+id/txtGenre"
+                        style="@style/TextReverseTheme"
+                        app:layout_constraintStart_toStartOf="@id/txtTitle"
+                        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+                    <View style="@style/Divider" />
+
+                    <TextView
+                        android:id="@+id/txtWebsite"
+                        style="@style/TextReverseTheme"
+                        app:layout_constraintStart_toStartOf="@id/txtTitle"
+                        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rclRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/lblDirector"
+            style="@style/LabelTheme"
+            android:layout_marginTop="12dp"
+            android:text="@string/director"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/rclRating" />
+
+        <TextView
+            android:id="@+id/txtDirector"
+            style="@style/TextTheme"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_sort"
+            app:layout_constraintTop_toTopOf="@id/lblDirector" />
+
+        <TextView
+            android:id="@+id/lblWriter"
+            style="@style/LabelTheme"
+            android:text="@string/writer"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/txtDirector" />
+
+        <TextView
+            android:id="@+id/txtWriter"
+            style="@style/TextTheme"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_sort"
+            app:layout_constraintTop_toTopOf="@id/lblWriter" />
+
+        <TextView
+            android:id="@+id/lblActor"
+            style="@style/LabelTheme"
+            android:text="@string/actor"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/txtWriter" />
+
+        <TextView
+            android:id="@+id/txtActor"
+            style="@style/TextTheme"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_sort"
+            app:layout_constraintTop_toTopOf="@id/lblActor" />
+
+        <TextView
+            android:id="@+id/lblPlot"
+            style="@style/LabelTheme"
+            android:text="@string/plot"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/txtActor" />
+
+        <TextView
+            android:id="@+id/txtPlot"
+            style="@style/TextTheme"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_sort"
+            app:layout_constraintTop_toTopOf="@id/lblPlot" />
+
+        <TextView
+            android:id="@+id/lblLanguage"
+            style="@style/LabelTheme"
+            android:text="@string/language"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/txtPlot" />
+
+        <TextView
+            android:id="@+id/txtLanguage"
+            style="@style/TextTheme"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_sort"
+            app:layout_constraintTop_toTopOf="@id/lblLanguage" />
+
+        <TextView
+            android:id="@+id/lblCountry"
+            style="@style/LabelTheme"
+            android:text="@string/country"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/txtLanguage" />
+
+        <TextView
+            android:id="@+id/txtCountry"
+            style="@style/TextTheme"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_sort"
+            app:layout_constraintTop_toTopOf="@id/lblCountry" />
+
+        <TextView
+            android:id="@+id/lblAwards"
+            style="@style/LabelTheme"
+            android:text="@string/awards"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/txtCountry" />
+
+        <TextView
+            android:id="@+id/txtAwards"
+            style="@style/TextTheme"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_sort"
+            app:layout_constraintTop_toTopOf="@id/lblAwards" />
+
+        <TextView
+            android:id="@+id/lblBoxOffice"
+            style="@style/LabelTheme"
+            android:text="@string/box_office"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/txtAwards" />
+
+        <TextView
+            android:id="@+id/txtBoxOffice"
+            style="@style/TextTheme"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_sort"
+            app:layout_constraintTop_toTopOf="@id/lblBoxOffice" />
+
+        <TextView
+            android:id="@+id/lblProduction"
+            style="@style/LabelTheme"
+            android:text="@string/production"
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/txtBoxOffice" />
+
+        <TextView
+            android:id="@+id/txtProduction"
+            style="@style/TextTheme"
+            app:layout_constraintEnd_toStartOf="@id/guideline_end"
+            app:layout_constraintStart_toEndOf="@id/guideline_sort"
+            app:layout_constraintTop_toTopOf="@id/lblProduction" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

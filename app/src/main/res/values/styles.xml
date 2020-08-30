@@ -1,0 +1,63 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/times_regular</item>
+        <item name="android:layoutDirection">ltr</item>
+    </style>
+
+    <style name="progressbarStyle" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="LabelTheme" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textAppearanceSubtitle2</item>
+        <item name="android:textColor">@color/text_color_secondary</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="TextTheme" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textAppearanceSubtitle2</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:lineSpacingExtra">8dp</item>
+    </style>
+
+    <style name="TextReverseTheme" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textAppearanceSubtitle2</item>
+        <item name="android:textColor">@color/text_color_reverse</item>
+    </style>
+
+    <style name="TextRateTheme" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textAppearanceCaption</item>
+        <item name="android:textColor">@color/text_color_secondary</item>
+    </style>
+
+    <style name="LabelRateTheme" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/textAppearanceSubtitle1</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+</resources>
