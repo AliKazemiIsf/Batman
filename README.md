@@ -1,2 +1,2 @@
 # Batman 
-* movies with MVVM and Retrofit
+* list of batman movies with detail by MVVM architecture and Retrofit
