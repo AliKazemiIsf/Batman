@@ -139,29 +139,22 @@
                         app:layout_constraintTop_toBottomOf="@id/txtTitle" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+
+                <TextView
+                    android:id="@+id/txtGenre"
+                    style="@style/TextReverseTheme"
                     android:layout_marginTop="8dp"
-                    android:orientation="horizontal"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@id/txtTitle"
-                    app:layout_constraintTop_toBottomOf="@id/detail1">
+                    app:layout_constraintTop_toBottomOf="@id/detail1" />
 
-                    <TextView
-                        android:id="@+id/txtGenre"
-                        style="@style/TextReverseTheme"
-                        app:layout_constraintStart_toStartOf="@id/txtTitle"
-                        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
-
-                    <View style="@style/Divider" />
-
-                    <TextView
-                        android:id="@+id/txtWebsite"
-                        style="@style/TextReverseTheme"
-                        app:layout_constraintStart_toStartOf="@id/txtTitle"
-                        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
+                <TextView
+                    android:id="@+id/txtWebsite"
+                    style="@style/TextReverseTheme"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/txtTitle"
+                    app:layout_constraintTop_toBottomOf="@id/txtGenre" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -169,10 +162,10 @@
             android:id="@+id/rclRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/header"
-            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            android:layout_marginTop="4dp"
             app:layout_constraintEnd_toStartOf="@id/guideline_end"
-            android:layout_marginTop="4dp"/>
+            app:layout_constraintStart_toEndOf="@id/guideline_start"
+            app:layout_constraintTop_toBottomOf="@id/header" />
 
         <TextView
             android:id="@+id/lblDirector"

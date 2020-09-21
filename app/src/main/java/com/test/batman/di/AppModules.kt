@@ -20,7 +20,7 @@ val networkModules = module {
 }
 
 val viewModels = module {
-    viewModel { DashboardViewModel(get())}
+    viewModel { DashboardViewModel(get(), get())}
 }
 
 val databaseModule = module {

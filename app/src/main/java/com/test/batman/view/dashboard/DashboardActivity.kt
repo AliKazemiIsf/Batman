@@ -4,12 +4,11 @@ import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import com.test.batman.R
+import com.test.batman.extensions.addFragmentInActivity
 import com.test.batman.extensions.replaceFragmentInActivity
-import com.test.batman.view.dashboard.detail.DetailFragment
+import com.test.batman.view.dashboard.detail.MovieDetailFragment
 import com.test.batman.view.dashboard.movies.MoviesFragment
-import kotlinx.android.synthetic.main.activity_dashboard.*
 
 class DashboardActivity : AppCompatActivity() {
 
@@ -33,18 +32,18 @@ class DashboardActivity : AppCompatActivity() {
     private fun gotoDashboard() {
         replaceFragmentInActivity(
             R.id.container,
-            MoviesFragment {
-                gotoDetail(it)
+            MoviesFragment { id, title, posterUrl, year ->
+                gotoDetail(id, title, posterUrl, year)
             },
             MoviesFragment.TAG
         )
     }
 
-    private fun gotoDetail(id: String) {
-        replaceFragmentInActivity(
+    private fun gotoDetail(id: String, title:String, posterUrl: String, year: String) {
+        addFragmentInActivity(
             R.id.container,
-            DetailFragment(id),
-            DetailFragment.TAG
+            MovieDetailFragment(id, title, posterUrl, year),
+            MovieDetailFragment.TAG
         )
     }
 

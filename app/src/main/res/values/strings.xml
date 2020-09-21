@@ -16,5 +16,6 @@
     <string name="no_internet">No Connection Available</string>
     <string name="choose_film">Choose Film</string>
     <string name="press_again_to_exit">Press again to exit</string>
+    <string name="refresh">refresh</string>
 
 </resources>

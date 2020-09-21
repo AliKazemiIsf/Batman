@@ -2,7 +2,7 @@ package com.test.batman.data.network.model
 
 import com.google.gson.annotations.SerializedName
 
-class BatmanMoviesResponse {
+class MoviesResponse {
     @SerializedName("Search")
     val search: List<Result>?= null
 

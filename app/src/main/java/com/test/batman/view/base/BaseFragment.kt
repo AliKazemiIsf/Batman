@@ -9,11 +9,9 @@ abstract class BaseFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setup()
-        handleObserver()
         handleError()
     }
 
     abstract fun setup()
     abstract fun handleError()
-    abstract fun handleObserver()
 }

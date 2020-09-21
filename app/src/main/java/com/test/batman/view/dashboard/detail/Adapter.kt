@@ -5,11 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.test.batman.R
+import com.test.batman.data.local.entity.Rating
 import com.test.batman.data.network.model.MovieDetailResponse
 import kotlinx.android.synthetic.main.item_rating.view.*
 
 class Adapter(
-    private val list: List<MovieDetailResponse.Rating>
+    private val list: List<Rating>
 ): RecyclerView.Adapter<Adapter.CustomViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -23,9 +24,9 @@ class Adapter(
     override fun getItemCount(): Int = list.size
 
     inner class CustomViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        fun onBind(model: MovieDetailResponse.Rating){
-            itemView.txtRatingSource.text = model.source
-            itemView.txtRatingValue.text = model.value
+        fun onBind(model: Rating){
+            itemView.txtRatingSource.text = model.xSource
+            itemView.txtRatingValue.text = model.xValue
         }
     }
 }

@@ -6,12 +6,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.test.batman.R
-import com.test.batman.data.network.model.BatmanMoviesResponse
+import com.test.batman.data.local.entity.Movie
 import kotlinx.android.synthetic.main.item_movie.view.*
 
 class Adapter(
-    private val list: List<BatmanMoviesResponse.Result>,
-    private val callback: (String)-> Unit
+    private val list: List<Movie>,
+    private val callback: (String, String, String, String)-> Unit
 ): RecyclerView.Adapter<Adapter.CustomViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -25,14 +25,14 @@ class Adapter(
     override fun getItemCount(): Int = list.size
 
     inner class CustomViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-        fun onBind(model: BatmanMoviesResponse.Result){
-            itemView.txtTitle.text = model.title
-            itemView.txtYear.text = model.year
+        fun onBind(model: Movie){
+            itemView.txtTitle.text = model.xTitle
+            itemView.txtYear.text = model.xYear
             Glide.with(itemView.context)
-                .load(model.posterUrl)
+                .load(model.xPosterUrl)
                 .into(itemView.thumbnail)
             itemView.setOnClickListener {
-                callback.invoke(model.imdbId ?: "")
+                callback.invoke(model.xImdbId, model.xTitle ?: "", model.xPosterUrl?: "", model.xYear ?: "")
             }
         }
     }

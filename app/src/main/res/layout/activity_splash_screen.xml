@@ -38,22 +38,6 @@
         android:text="@string/all_movies_rank"
         android:layout_marginTop="8dp"/>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnRetry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        app:strokeColor="@color/colorAccent"
-        app:strokeWidth="2dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtSubtitle"
-        android:layout_marginTop="50dp"
-        android:text="@string/retry"
-        android:textColor="@color/colorAccent"
-        android:textSize="@dimen/textAppearanceSubtitle2"
-        android:visibility="gone"/>
-
     <ProgressBar
         android:id="@+id/prcTry"
         android:layout_width="@dimen/progress"
